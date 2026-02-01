@@ -1,4 +1,4 @@
-# easing Graph
+# Easing Graph
 An editor for CSS animations using an Graph and some buttons/sliders.
 
 ## Features
@@ -47,5 +47,8 @@ Ease Out Bounce
 project is made with HTML, CSS and JavaScript
 
 ---
+
+### Note from me
+I hope you like this project. For me this is a fun way to learn cureves and cube-bezier in CSS :)
 
 Created with ❤️
