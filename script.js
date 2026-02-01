@@ -95,9 +95,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateCode() {
     const b = bezierMap[currentEasing];
-    cssCode.textContent = b
-      ? `.element {\n  transition: transform ${duration}ms cubic-bezier(${b.join(", ")});\n}\n\n.element:hover {\n  transform: translateX(100px);\n}`
-      : `/* ${currentEasing} needs keyframes or JS */`;
+    if (b) {
+      cssCode.textContent = `.element {\n  transition: transform ${duration}ms cubic-bezier(${b.join(", ")});\n}\n\n.element:hover {\n  transform: translateX(100px);\n}`;
+    } else if (currentEasing === "easeOutBounce") {
+      cssCode.textContent = `@keyframes bounceOut {
+  0% { transform: translateX(0); }
+  36.36% { transform: translateX(100px); }
+  54.54% { transform: translateX(75px); }
+  72.72% { transform: translateX(100px); }
+  81.81% { transform: translateX(93.75px); }
+  90.90% { transform: translateX(100px); }
+  95.45% { transform: translateX(98.4375px); }
+  100% { transform: translateX(100px); }
+}
+
+.element {
+  animation: bounceOut ${duration}ms forwards;
+}`;
+    } else {
+      cssCode.textContent = `/* ${currentEasing} needs keyframes or JS */`;
+    }
   }
 
   function playAnimation() {
