@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easing Visualizer</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Easing Functions Visualizer</h1>
+    
+    <div class="main-grid">
+      <div class="controls">
+        <h2>Select Easing</h2>
+        <select id="easing-select">
+          <option value="linear">Linear</option>
+          <optgroup label="Sine">
+            <option value="easeInSine">Ease In Sine</option>
+            <option value="easeOutSine">Ease Out Sine</option>
+            <option value="easeInOutSine">Ease In Out Sine</option>
+          </optgroup>
+          <optgroup label="Quad">
+            <option value="easeInQuad">Ease In Quad</option>
+            <option value="easeOutQuad">Ease Out Quad</option>
+            <option value="easeInOutQuad">Ease In Out Quad</option>
+          </optgroup>
+          <optgroup label="Cubic">
+            <option value="easeInCubic">Ease In Cubic</option>
+            <option value="easeOutCubic">Ease Out Cubic</option>
+            <option value="easeInOutCubic">Ease In Out Cubic</option>
+          </optgroup>
+          <optgroup label="Back">
+            <option value="easeInBack">Ease In Back</option>
+            <option value="easeOutBack" selected>Ease Out Back</option>
+            <option value="easeInOutBack">Ease In Out Back</option>
+          </optgroup>
+          <optgroup label="Bounce">
+            <option value="easeOutBounce">Ease Out Bounce</option>
+          </optgroup>
+        </select>
+
+        <div class="duration-control">
+          <label>Duration: <span id="duration-val">1000</span>ms</label>
+          <input type="range" id="duration" min="500" max="3000" value="1000" step="100">
+        </div>
+
+        <button id="play-btn">▶ Play Animation</button>
+      </div>
+
+      <div class="preview">
+        <h2>Preview</h2>
+        <div class="track">
+          <div class="ball" id="ball"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="graph-container">
+      <h2>Easing Curve</h2>
+      <canvas id="graph"></canvas>
+    </div>
+
+    <div class="code-output">
+      <div class="code-header">
+        <h2>CSS Code</h2>
+        <button id="copy-btn">Copy</button>
+      </div>
+      <pre><code id="css-code"></code></pre>
+    </div>
+
+    <footer>
+      <p>Created with ❤️ View on <a href="https://github.com/hackTheWorldHappy/easing-Graph" target="_blank">GitHub</a>.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
