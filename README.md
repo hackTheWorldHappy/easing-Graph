@@ -28,3 +28,5 @@ Ease In Out Back
 
 **Bounce**\
 Ease Out Bounce
+
+Created with ❤️
